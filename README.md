@@ -1,3 +1,35 @@
+# CheerDn's Fork of slurm-docker-cluster
+
+> This is a personal fork of [giovtorres/slurm-docker-cluster](https://github.com/giovtorres/slurm-docker-cluster)
+> for learning and experimenting with Slurm scheduling behaviors.
+
+## Added Scripts
+
+| Script | Description |
+|--------|-------------|
+| `test_qos_intercepting_jobs.sh` | Demonstrates high-priority QoS bypassing lower-priority pending jobs |
+| `fetch_failed_logs.sh` | Fetches and diagnoses failed jobs from the past hour |
+| `monitor_cluster.sh` | Launches a live cluster monitor via `watch` (2s refresh) |
+| `cluster_snapshot.sh` | Single-shot cluster status snapshot (used by monitor) |
+| `examples/jobs/bad_job.sh` | Example job that explicitly exits with failure (exit code 1) |
+| `examples/jobs/oom_job.sh` | Example job that triggers OOM for testing |
+
+## Usage
+
+```bash
+# Monitor cluster in real-time
+./monitor_cluster.sh
+
+# Test QoS priority preemption
+./test_qos_intercepting_jobs.sh
+
+# Fetch and diagnose recent failed jobs
+./fetch_failed_logs.sh
+```
+
+---
+<!-- Original README below -->
+
 # Slurm Docker Cluster
 
 **Slurm Docker Cluster** is a multi-container Slurm cluster designed for rapid
