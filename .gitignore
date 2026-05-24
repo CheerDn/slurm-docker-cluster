@@ -42,7 +42,7 @@ tmp/
 
 # Local testing files
 test-output/
-*.test
+
 
 # Git
 *.orig
